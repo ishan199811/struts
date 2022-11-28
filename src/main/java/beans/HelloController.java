@@ -44,6 +44,7 @@ public class HelloController extends Action {
 		h=session.createCriteria(Hello.class).list();
 		for(Hello hel:h) {
 		System.out.println(hel.getAddress());
+		request.setAttribute("res", "hello...."+hel.getAddress() +":");
 		}
 		System.out.println("-----------"+name+"--------------"+address);
 		session.flush();
@@ -51,7 +52,7 @@ public class HelloController extends Action {
 //        hell.saveOrUpdate(hello);
 	
 		
-request.setAttribute("res", "hello...."+address +":" + name);
+
 
 		return mapping.findForward("success");
 	}

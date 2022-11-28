@@ -19,5 +19,40 @@ NAME:<html:text property="name"/>
  <br>
 <html:submit value="SayHi"/>
 </html:form>
+ <html:form action="/FileUpload.do" method="post" enctype="multipart/form-data">
+<table>
+<tr>
+<td align="center" colspan="2">
+<font size="4">Please Enter the Following Details</font>
+</tr>
+
+<tr>
+<td align="left" colspan="2">
+<font color="red"><html:errors/></font>
+</tr>
+
+
+
+<tr>
+<td align="right">
+File Name
+</td>
+<td align="left">
+<html:file property="file"/> 
+</td>
+</tr>
+
+
+<tr>
+<td align="center" colspan="2">
+<html:submit>Upload File</html:submit>
+</td>
+</tr>
+</table>
+
+
+</html:form>
+
+
 </body>
 </html>

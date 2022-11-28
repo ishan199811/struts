@@ -1,11 +1,6 @@
 package action;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -13,9 +8,6 @@ import org.apache.struts.action.ActionMapping;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-
-import domain.Hello;
-import domain.HelloDaoImpl;
 import domain.User;
 import plugin.HibernatePlugin;
 
@@ -37,7 +29,7 @@ public class UserAction extends Action{
         session.saveOrUpdate(user);
         session.flush();
 		tx.commit();
-		req.setAttribute("ress", "hello...."+email +":" + name);
+		req.setAttribute("ress", "hello...."+ user +":")  ;
 		return mapping.findForward("success");
 		
 	}

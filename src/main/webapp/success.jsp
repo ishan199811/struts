@@ -10,5 +10,9 @@
 
 <%=request.getAttribute("res") %>
 <%=request.getAttribute("ress") %>
+
+<p align="center"><font size="5" >File Successfully Received</font></p>
+	
+
 </body>
 </html>
