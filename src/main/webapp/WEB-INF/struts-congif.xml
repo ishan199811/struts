@@ -20,18 +20,18 @@
 <action path="/hell" name="User" input="/index.jsp" type="action.UserAction">
 <forward name="success" path="/success.jsp"></forward>
 </action>
-<action
-   path="/FileUpload"
-   type="action.FileAction"
-   name="File"
-   scope="request"
-   validate="true"
-   input="/pages/FileUpload.jsp">
+<action path="/demo"  input="/index.jsp" type="action.HomeController" >
+<forward name="success" path="/userList.jsp"></forward>
+</action>
+<action path="/delete" name="RF" input="/userList.jsp" type="action.UserActionDelete" >
+<forward name="success" path="/userList.jsp"></forward>
+</action>
+<action path="/FileUpload" type="action.FileAction" name="File" scope="request" validate="true"   
+input="/pages/FileUpload.jsp">
    <forward name="success" path="/success.jsp"/>
 </action>
 
 </action-mappings>
-
 <message-resources parameter="beans/Messages"></message-resources>
 <!-- <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
 	<set-property property="pathnames"
@@ -40,7 +40,4 @@
 <plug-in className="plugin.HibernatePlugin">
  <!--  <set-property property="configFilePath" value="/hibernate.cfg.xml" />-->
 </plug-in>
-
-
-
 </struts-config>

@@ -48,13 +48,10 @@ public class HelloController extends Action {
 		}
 		System.out.println("-----------"+name+"--------------"+address);
 		session.flush();
+		request.setAttribute("listUsers", h);	
 		tx.commit();
 //        hell.saveOrUpdate(hello);
-	
-		
-
-
-		return mapping.findForward("success");
+	     return mapping.findForward("success");
 	}
 	
 //	public ActionForward execute(ActionMapping mapping,ActionForm form,

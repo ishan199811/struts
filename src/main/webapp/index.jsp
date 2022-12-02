@@ -1,23 +1,19 @@
 <%@taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
+<%@taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
 </head>
 <body>
 <h1>hello form</h1>
-<html:form action="hello">
-NAME:<html:text property="name"/>
- Address:<html:text property="address"/>
- <br>
- <html:errors/> 
- <br>
-<html:submit value="SayHello"/>
-</html:form>
 
 <html:form action="hell">
 NAME:<html:text property="name"/>
  Email:<html:text property="email"/>
  <br>
- <html:errors/> 
+ 
  <br>
-<html:submit value="SayHi"/>
+<html:submit value="Save data (without-validation)"/>
 </html:form>
  <html:form action="/FileUpload.do" method="post" enctype="multipart/form-data">
 <table>
@@ -28,7 +24,7 @@ NAME:<html:text property="name"/>
 
 <tr>
 <td align="left" colspan="2">
-<font color="red"><html:errors/></font>
+
 </tr>
 
 
@@ -49,10 +45,9 @@ File Name
 </td>
 </tr>
 </table>
-
-
 </html:form>
-
-
+<p>
+<a href="demo.do">click here to see user list</a>
+</p>
 </body>
 </html>

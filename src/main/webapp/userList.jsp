@@ -1,11 +1,8 @@
+<%@taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
 <%@taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
-
-
-<!DOCTYPE html>
-<html>
 <head>
 <style>
 table {
@@ -24,16 +21,9 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 </style>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+
+
 </head>
-<body>
-
-<%=request.getAttribute("res") %>
-<%=request.getAttribute("ress") %>
-
-File uploaded to : <%= request.getAttribute("uploadedFilePath") %>
-	
 <table>
   <tr> <th>Id</th>
     <th>name</th>
@@ -47,10 +37,15 @@ File uploaded to : <%= request.getAttribute("uploadedFilePath") %>
     <td><bean:write name="listUserId" property="id"/></td>
     <td><bean:write name="listUserId" property="name"/></td>
     <td><bean:write name="listUserId" property="address"/></td>
-    <td></td>
-     <td></td>
+ <td><button >Edit</button></td>
+ 
+ 
+  <td>
+    <html:form action="delete.do">
+   <html:text name="listUserId" property="id" /> 
+<html:submit value="Delete"/>
+</html:form>
+ </td>
   </tr>
   </logic:iterate>
 </table>
-</body>
-</html>
